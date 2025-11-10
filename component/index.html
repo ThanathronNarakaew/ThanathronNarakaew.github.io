@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>กรุณาเปิดในเบราว์เซอร์</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .btn {
+            background: #3b82f6;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        @media screen and (min-width: 600px) {
+            body {
+                padding: 20px;
+            }
+            img {
+                max-width: 20%;
+            }
+            .btn {
+                font-size: 18px;
+            }
+            
+        }
+    </style>
+</head>
+
+<body>
+    <h2>ระบบนี้ทำงานได้ดีที่สุดบนเบราว์เซอร์🌐</h2>
+    <p>กรุณาเปิดลิงก์นี้ใน Chrome หรือ Safari เพื่อใช้งานเต็มรูปแบบ</p>
+
+    <button class="btn" onclick="openInBrowser()">เปิดในเบราว์เซอร์</button>
+
+    <img src="img02.png" alt="">
+
+    <script>
+        function openInBrowser() {
+            const targetURL = "https://thome-compare-house.onrender.com";  // ✅ เปลี่ยนเป็น URL หน้าแรกของระบบ
+            const ua = navigator.userAgent.toLowerCase();
+
+            if (ua.includes("android")) {
+                const intentURL = `intent://${targetURL.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end;`;
+                window.location.href = intentURL;
+            } else if (ua.includes("iphone") || ua.includes("ipad")) {
+                // iOS เปิดผ่าน Safari โดยการเปิดแท็บใหม่
+                window.open(targetURL, "_blank");
+            } else {
+                // fallback: redirect ธรรมดา
+                window.location.href = targetURL;
+            }
+        }
+    </script>
+</body>
+
+</html>

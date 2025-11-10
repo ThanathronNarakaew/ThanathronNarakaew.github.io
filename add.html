@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เปรียบเทียบสเปกบ้าน</title>
+    <link rel="stylesheet" href="/CSS/add.css">
+    <link rel="stylesheet" href="/CSS/news.css">
+</head>
+
+<body>
+    <header data-title="เพิ่มหรือแก้ไขข้อมูลโครงการ"></header>
+
+    <main>
+        <a href="/" class="back-btn">&larr; กลับหน้าหลัก</a>
+        <form method="post" enctype="multipart/form-data">
+            <div class="container">
+                <!-- house form -->
+                <div class="house">
+                    <!-- Row 1: ชื่อโครงการ -->
+                    <div class="form-row">
+                        <label for="project_name">ชื่อโครงการ</label>
+                        <input type="text" id="project_name" name="project_name" placeholder="ระบุชื่อโครงการ" />
+                    </div>
+                    <!-- Row 2: อัปโหลดรูปภาพ -->
+                    <div class="form-row">
+                        <div class="upload-row">
+                            <label for="project_image">เพิ่มรูปภาพ</label>
+                            <button type="button" class="upload-btn"
+                                onclick="document.getElementById('project_image').click()">อัปโหลด</button>
+                            <input type="file" id="project_image" name="project_image" accept="image/*" hidden />
+                            <span id="file-name" class="file-name">ยังไม่ได้เลือกไฟล์</span>
+                            <img id="image_preview" style="max-width: 200px; display: none; margin-top: 10px;" />
+
+                        </div>
+                    </div>
+                </div>
+
+                <template id="form-row-template">
+                    <div class="form-row">
+                        <div class="icon">
+                            <img src="" alt="">
+                        </div>
+                        <label></label>
+                        <input type="checkbox" name="">
+                        <input type="text" name="" placeholder="ระบุสเปก (หากทราบ)">
+                    </div>
+                </template>
+
+                <!-- Container แต่ละฟอร์ม -->
+                <div class="dropdown-form">
+                    <div class="dropdown-selected">ข้อมูลบ้าน (House Information)</div>
+                    <div class="dropdown-options" id="form-information"></div>
+                </div>
+
+                <div class="dropdown-form">
+                    <div class="dropdown-selected">งานโครงสร้าง (Structural)</div>
+                    <div class="dropdown-options" id="form-structural"></div>
+                </div>
+
+                <div class="dropdown-form">
+                    <div class="dropdown-selected">การรับประกัน (Defect Warranty)</div>
+                    <div class="dropdown-options" id="form-warranty"></div>
+                </div>
+
+                <div class="dropdown-form">
+                    <div class="dropdown-selected">งานประปา, สุขาภิบาล (Plumbing-Sanitary)</div>
+                    <div class="dropdown-options" id="form-plumbing"></div>
+                </div>
+
+                <div class="dropdown-form">
+                    <div class="dropdown-selected">งานหลังคา (Roofing)</div>
+                    <div class="dropdown-options" id="form-roof"></div>
+                </div>
+
+                <div class="dropdown-form">
+                    <div class="dropdown-selected">งานไฟฟ้า (Electrical)</div>
+                    <div class="dropdown-options" id="form-electrical"></div>
+                </div>
+
+                <div class="dropdown-form">
+                    <div class="dropdown-selected">นวัตกรรม (Living Solution)</div>
+                    <div class="dropdown-options" id="form-living"></div>
+                </div>
+
+                <div class="dropdown-form">
+                    <div class="dropdown-selected">งานเบล็ดเตล็ด (Utility)</div>
+                    <div class="dropdown-options" id="form-utility"></div>
+                </div>
+                <div class="dropdown-form">
+                    <div class="dropdown-selected">งานส่วนกลาง (facility)</div>
+                    <div class="dropdown-options" id="form-facility"></div>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">บันทึกข้อมูล</button>
+        </form>
+    </main>
+
+    <footer></footer>
+
+</body>
+<script src="/component/loadFooter.js"></script>
+<script src="/component/loadHeader.js"></script>
+<script src="/js/dropdown.js"></script>
+<script src="/js/formGroups.js"></script>
+<script src="/js/addHome.js"></script>
+
+</html>

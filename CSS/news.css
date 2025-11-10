@@ -1,0 +1,213 @@
+/* Style for Back Button */
+.back-btn {
+    display: block;
+    padding: 8px 16px;
+    margin-bottom: 15px; /* เพิ่มระยะห่างระหงปุ่มกับฟอร์ม */
+    /* margin-top: 15px; เพิ่มระยะห่างระหงปุ่มกับฟอร์ม */
+    border: 1px solid #1b83e4; /* สีขอบตว่าามธีม */
+    background-color: #ffffff;  /* พื้นหลังสีขาว */
+    color: #1b83e4;             /* สีตัวอักษรตามธีม */
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    text-decoration: none;      /* ลบขีดเส้นใต้ของลิงก์ */
+    font-weight: bold;
+    width: fit-content;
+    margin-left: auto;
+}
+
+/* เมื่อเอาเมาส์ชี้หรือคลิก */
+.back-btn:hover,
+.back-btn:active {
+    background-color: #1b83e4; /* สลับสีพื้นหลัง */
+    color: white;             /* สลับสีตัวอักษร */
+}
+
+        /* Basic Modal Styles */
+        .modal {
+            display: none;
+            /* ซ่อนไว้ก่อน */
+            position: fixed;
+            /* อยู่กับที่ */
+            z-index: 1000;
+            /* อยู่ชั้นบนสุด */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            /* ฉากหลังสีเทา */
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            /* 5% จากด้านบนและกึ่งกลาง */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: -10px;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-content p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        /* --- ⭐️ [นี่คือส่วนที่อัปเดต] สไตล์ปุ่ม Modal ⭐️ --- */
+        .modal-content button {
+            /* ใช้ font-size และ padding ของ modal เดิมจะดูดีกว่า */
+            font-size: 1rem; 
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            /* นำ font-weight: regular (คือ normal) จาก home.css มาใช้ */
+            font-weight: normal; 
+            /* เพิ่ม transition ให้การสลับสีดูนุ่มนวล */
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        /* "ยืนยัน" (ปุ่มแดง) - ใช้สไตล์เหมือน #clearBtn:active */
+        #confirmDeleteBtn {
+            background-color: #ffffff;
+            color: #4CAF50;
+            border: 1px solid #4CAF50;
+        }
+
+        /* Hover "ยืนยัน" - สลับสี (เหมือน #clearBtn) */
+        #confirmDeleteBtn:hover {
+            background-color: #4CAF50;
+            color: #000000;
+        }
+
+/* "ยกเลิก" และ "ตกลง" (ปุ่มขาว) - ใช้สไตล์เหมือน #clearBtn */
+#cancelDeleteBtn,
+#alertOkBtn,
+#alertCOkBtn { /* <-- เพิ่ม ID ใหม่ที่นี่ */
+    background-color: white;
+    color: #af4c4c;
+    border: 1px solid #af4c4c;
+}
+
+/* Hover "ยกเลิก", "ตกลง" - สลับสี (เหมือน #clearBtn:active) */
+#cancelDeleteBtn:hover,
+#alertOkBtn:hover,
+#alertCOkBtn:hover { /* <-- และเพิ่มที่นี่ */
+    background-color: #af4c4c;
+    color: white;
+}
+
+        /* --- Tooltip that follows the mouse --- */
+#mouse-tooltip {
+    position: fixed; /* Use 'fixed' to position relative to the viewport */
+    display: none;   /* Hidden by default */
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 1rem;     /* You can adjust the font size */
+    font-weight: bold;
+    z-index: 1001;     /* Make sure it's above other content */
+    
+    /* VERY IMPORTANT: This lets mouse events pass through to the card */
+    pointer-events: none; 
+}
+
+/* --- 1. สไตล์หลักของ Modal (ฉากหลัง) --- */
+.modal {
+    display: none;
+    /* ซ่อนไว้ก่อน */
+    position: fixed;
+    /* อยู่กับที่ */
+    z-index: 1000;
+    /* อยู่ชั้นบนสุด */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    /* ฉากหลังสีเทา */
+    padding-top: 60px;
+}
+
+/* --- 2. สไตล์ของกล่อง Modal (เนื้อหา) --- */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    /* 5% จากด้านบนและกึ่งกลาง */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* --- 3. สไตล์ของปุ่มปิด (X) --- */
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: -10px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+/* --- 4. สไตล์ปุ่มภายใน Modal (ทั่วไป) --- */
+.modal-content button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: normal;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* --- 5. สไตล์เฉพาะของปุ่ม "ตกลง" (ID: alertCOkBtn) --- */
+#alertCOkBtn {
+    background-color: white;
+    color: #af4c4c;
+    border: 1px solid #af4c4c;
+}
+
+#alertCOkBtn:hover {
+    background-color: #af4c4c;
+    color: white;
+}

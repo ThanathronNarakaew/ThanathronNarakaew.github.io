@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>เปรียบเทียบสเปคบ้าน</title>
+    <link rel="stylesheet" href="/CSS/home.css" />
+    <link rel="stylesheet" href="/CSS/news.css" />
+  </head>
+
+  <body>
+    <header
+      data-title="เปรียบเทียบบ้านในฝันของคุณ"
+      header-subtitle="เปรียบเทียบบ้านง่ายๆ พร้อมดูเรตติ้งบ้านที่คุณสนใจ ช่วยตัดสินใจเลือกบ้านที่ใช่ ครบจบในเว็บเดียวสำหรับคนซื้อบ้านยุคใหม่"
+    ></header>
+
+    <main>
+      <div class="container1">
+        <div class="AddHouse">
+          <h3>ข้อมูลบ้าน</h3>
+          <div class="buttons">
+            <button id="addBtn" type="button">เพิ่มข้อมูล</button>
+            <button id="clearBtn" type="button">ลบข้อมูล</button>
+          </div>
+        </div>
+
+        <div id="add-home-box" class="add-home-box">
+          <p>เพิ่มข้อมูลโครงการเพื่อเปรียบเทียบ</p>
+        </div>
+
+        <template id="home-card-template">
+          <div class="card">
+            <div class="card-image">
+              <img src="" alt="Avatar" />
+            </div>
+            <input type="checkbox" name="house" value="" />
+            <div class="details"></div>
+          </div>
+        </template>
+
+        <div id="cardList"></div>
+
+        <div class="compare">
+          <button type="button" id="compareBtn">
+            ⭐ เปรียบเทียบ / ดูคะแนน
+          </button>
+        </div>
+      </div>
+
+      <div class="container_note">
+        <div class="note_detail">
+          <p>
+            คะแนนบ้านแต่ละหลังประเมินโดยผู้เชี่ยวชาญที่มีประสบการณ์ตรงของ
+            ต.ตรวจบ้าน ที่ผ่านการตรวจบ้านมาแล้ว นับพันหลังทั่วประเทศ
+            เพื่อให้คุณมั่นใจได้ว่า<br />
+            " บ้านที่คุณเลือกคุ้มค่าแน่นอน "
+          </p>
+        </div>
+      </div>
+
+      <div class="container2">
+        <div class="article">
+          <h3>บทความ</h3>
+          <div class="article-links">
+            <div
+              class="article-link"
+              href="https://thomeinspector.com/article/detail?news_id=44"
+              >5 เคล็บลับซื้อบ้านใหม่ฉบับมือโปร</div
+            >
+            <div
+              class="article-link"
+              href="https://thomeinspector.com/article/detail?news_id=4"
+              >แจกฟรี!!! เอกสารความรู้เกี่ยวกับการตรวจบ้าน</div
+            >
+            <div
+              class="article-link"
+              href="https://thomeinspector.com/article/detail?news_id=49"
+              >เราแตกต่างจากที่อื่นอย่างไร</div
+            >
+          </div>
+          <a class="foward-mainweb" href="https://thomeinspector.com/article"
+            >บทความอื่นๆ คลิกที่นี่</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <footer></footer>
+
+    <div id="confirmDeleteModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeConfirmModal">&times;</span>
+        <p>คุณแน่ใจหรือไม่ว่าต้องการลบข้อมูลที่เลือก?</p>
+        <button id="confirmDeleteBtn">ยืนยัน</button>
+        <button id="cancelDeleteBtn">ยกเลิก</button>
+      </div>
+    </div>
+
+    <div id="alertModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeAlertModal">&times;</span>
+        <p>กรุณาเลือกข้อมูลบ้านที่ต้องการลบก่อน</p>
+        <button id="alertOkBtn">ตกลง</button>
+      </div>
+    </div>
+
+    <div id="alertCompareModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeCompareModal">&times;</span>
+        <p>กรุณาเลือกบ้านอย่างน้อย 1 หลัง<br />เพื่อเปรียบเทียบ</p>
+        <button id="alertCOkBtn">ตกลง</button>
+      </div>
+    </div>
+
+    <script src="/component/loadFooter.js"></script>
+    <script src="/component/loadHeader.js"></script>
+    <script src="/js/homeData.js"></script>
+    <script src="/js/addHome.js"></script>
+    <script src="/js/compare.js"></script>
+    <script src="/js/news.js"></script>
+
+    <div id="mouse-tooltip">แก้ไขข้อมูลบ้าน</div>
+  </body>
+</html>

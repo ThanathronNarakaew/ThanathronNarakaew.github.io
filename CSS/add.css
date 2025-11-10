@@ -1,0 +1,362 @@
+@font-face {
+    font-family: 'FC Sound';
+    src: url('../assets/font/FCSound-Regular.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'FC Sound', sans-serif;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    padding: 20px;
+    display: block;
+    /* เปลี่ยนจาก flex เป็น block ก็พอ */
+}
+
+.container {
+    padding: 10px;
+    border-radius: 10px;
+    border: #d3d3d3 1px solid;
+    font-size: 12px;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*---------------------- Name House ----------------------*/
+.house .form-row input[type="text"] {
+    flex: 1;
+}
+
+.house .form-row {
+    display: flex;
+    align-items: start;
+    /* ช่องว่างระหว่าง label กับ input */
+}
+
+.house .form-row label {
+    white-space: nowrap;
+    /* ป้องกันชื่อ label ตกบรรทัด */
+    font-weight: bold;
+    margin: 8px 10px 10px 0px;
+    max-width: fit-content;
+}
+
+.upload-btn,
+.submit-btn {
+    padding: 8px 16px;
+    border: none;
+    background-color: #1b83e4;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.upload-btn:active,
+.submit-btn:active {
+    background-color: #0056b3;
+}
+
+span {
+    font-size: smaller;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* เพิ่มระยะห่างระหว่างแถว */
+}
+
+.submit-btn {
+    align-self: center;
+    /* ปรับปุ่ม submit ให้อยู่ด้านขวา */
+}
+
+/*---------------------- dropdown ----------------------*/
+.dropdown-form {
+    width: 100%;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dropdown-selected {
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.dropdown-options {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.form-row:last-child {
+    border-bottom: none;
+}
+
+.dropdown-options .form-row label {
+    flex: 1;
+    font-weight: light;
+    font-size: 12px;
+    max-width: 30%;
+}
+
+.form-row input[type="text"] {
+    width: 40%;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.dropdown-options .form-row input[type="checkbox"] {
+    margin: 0px 10px 0px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.form-row .icon {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+
+.form-row .icon img {
+    height: 30px;
+    width: 30px;
+}
+
+option,
+select {
+    padding: 10px;
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+select {
+    color: #727272;
+}
+
+select:valid {
+    color: #000;
+}
+
+.select-with-spec {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    margin-left: 10px;
+}
+
+#form-plumbing .select-with-spec:has(.count-after-select) {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.spec-row {
+    display: flex;
+    align-items: center;
+    margin: 3px 0;
+}
+
+.spec-input {
+    flex: 1;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.unit {
+    width: 10%;
+    font-size: 12px;
+    color: #666;
+    white-space: nowrap;
+    margin-left: 3px;
+    text-align: center;
+}
+
+input::placeholder {
+    color: gray;
+    font-size: 12px;
+}
+
+.select-with-spec:has(.inline-spec) {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.select-with-spec:has(.inline-spec) select,
+.select-with-spec:has(.inline-spec) input[type="text"] {
+    width: 50%;
+}
+
+#form-information .select-with-spec {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#form-structural label {
+    margin: 8px 10px 10px 0px;
+}
+
+#form-structural select,
+#form-roof select {
+    width: 100%;
+}
+
+#form-roof label {
+    width: 20%;
+}
+
+#form-information .select-with-spec {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#form-electrical input[type="text"]:last-child {
+    width: 45%;
+}
+
+#form-structural select,
+#form-roof select,
+#form-plumbing select,
+#form-electrical select,
+#form-information select,
+#form-facility select {
+    flex: 1;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+}
+
+#form-facility .form-row label {
+    max-width: 60%; /* ปรับค่า % นี้ได้ตามความเหมาะสม */
+    flex-grow: 1;
+}
+
+/* ถ้าคุณใช้ type: "select" ให้ปรับแก้ input/select ที่อยู่ด้านขวา
+  ให้มีความกว้างที่เหมาะสม
+*/
+#form-facility .select-with-spec {
+    flex: 1;
+    max-width: 40%; /* ปรับค่า % นี้ให้สมดุลกับ label */
+}
+
+#form-information input[type="text"],
+#form-information select {
+    width: 75%;
+    padding: 6px;
+    flex: none;
+}
+
+#form-electrical input[type="text"] {
+    width: 55%;
+}
+
+#form-electrical .count-after-select {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.count-after-select {
+    display: flex;
+    flex-direction: column;
+}
+
+.count-after-select input[type="text"] {
+    margin-top: 5px;
+    width: 100%;
+}
+
+.select-with-count {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 10px;
+}
+
+.count-after-select select {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.dropdown-form:nth-child(odd) .dropdown-selected {
+    background-color: #0077ff1f;
+    /*เปลี่นที่ div คี่*/
+}
+
+.dropdown-form:nth-child(even) .dropdown-selected {
+    background-color: #0077ff3d;
+    /*เปลี่นที่ div คู่*/
+}
+
+/*---------------------- เว็บไซต์ ----------------------*/
+@media (min-width: 768px) {
+    main {
+        max-width: 1024px;
+        margin: auto;
+        margin-bottom: 2%;
+        margin-top: 2%;
+        padding: 20px;
+    }
+
+    .container {
+        font-size: medium;
+    }
+
+    .form-row input[type="text"] {
+        width: 60%;
+    }
+
+    #form-information label {
+        max-width: 8%;
+    }
+
+    #form-structural label {
+        max-width: 20%;
+    }
+
+    #form-information #unit {
+        font-size: 14px;
+        width: 8%;
+    }
+}
