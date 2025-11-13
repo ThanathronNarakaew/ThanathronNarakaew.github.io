@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'FC Sound';
-    src: url('../assets/font/FCSound-Regular.ttf') format('truetype');
+    src: url('/assets/font/FCSound-Regular.ttf') format('truetype');
 }
 
 * {
