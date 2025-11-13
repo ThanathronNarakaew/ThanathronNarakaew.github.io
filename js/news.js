@@ -67,20 +67,31 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   confirmDeleteBtn.addEventListener("click", () => {
+    // 1. ดึง <input> ที่ถูกติ๊กเลือก
     const selectedCheckboxes = document.querySelectorAll(
       'input[name="house"]:checked'
     );
-    const idsToDelete = Array.from(selectedCheckboxes).map((cb) => cb.value);
 
-    let currentHomes = JSON.parse(localStorage.getItem("homes") || "[]");
-
-    // *** (ต้องแน่ใจว่า key 'id' ถูกต้อง) ***
-    const updatedHomes = currentHomes.filter(
-      (home) => !idsToDelete.includes(home.id)
+    // 2. ดึงค่า "dataset.index" ออกมา
+    //    แล้วแปลงเป็นตัวเลข (parseInt)
+    const indexesToDelete = Array.from(selectedCheckboxes).map((cb) =>
+      parseInt(cb.dataset.index)
     );
 
+    // 3. ดึงข้อมูลบ้านทั้งหมดจาก localStorage
+    let currentHomes = JSON.parse(localStorage.getItem("homes") || "[]");
+
+    // 4. กรอง (filter) ข้อมูล
+    //    เก็บไว้เฉพาะบ้านที่ "index" (ลำดับที่)
+    //    *ไม่* อยู่ในรายการที่ต้องลบ (indexesToDelete)
+    const updatedHomes = currentHomes.filter(
+      (home, index) => !indexesToDelete.includes(index)
+    );
+
+    // 5. บันทึกข้อมูลใหม่กลับไป
     localStorage.setItem("homes", JSON.stringify(updatedHomes));
 
+    // 6. ซ่อน Modal และรีโหลดหน้า
     hideConfirmModal();
     window.location.reload();
   });
