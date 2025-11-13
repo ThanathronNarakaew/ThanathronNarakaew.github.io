@@ -276,7 +276,7 @@ function generateAndExport() {
       pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, imgHeight);
 
       // 4. เปิด PDF (วิธีนี้คือการบังคับดาวน์โหลด)
-      pdf.save('summary.pdf');
+      window.open(pdf.output('bloburl'), '_blank');
 
       // หรือถ้าอยากเปิดในแท็บใหม่ (อาจโดน popup blocker)
       // window.open(pdf.output('bloburl'), '_blank');
